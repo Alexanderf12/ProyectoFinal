@@ -9,15 +9,15 @@ function Sidebar() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <input type="checkbox" id="category1" />
-                <label htmlFor="category1">Electrónica</label>
+                <label htmlFor="category1">Nike</label>
               </div>
               <div className="flex items-center space-x-2">
                 <input type="checkbox" id="category2" />
-                <label htmlFor="category2">Ropa</label>
+                <label htmlFor="category2">Adidas</label>
               </div>
               <div className="flex items-center space-x-2">
                 <input type="checkbox" id="category3" />
-                <label htmlFor="category3">Hogar</label>
+                <label htmlFor="category3">New Balance</label>
               </div>
             </div>
           </div>
