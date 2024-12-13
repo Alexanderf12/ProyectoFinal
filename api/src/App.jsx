@@ -9,26 +9,25 @@ function App() {
 
 const { data } = useFetchData('http://localhost:3000/select');
 const [filters, setFilter] = useState({
-    marca: 0,
+    marca: 'all',
     minPrice: 100
   })
 
   const filterProducts = (data) => {
-   
     return data.filter((dat) => {
-      console.log(dat.id_marca)
-      return(
-        
-        dat.precio >= filters.minPrice &&
-        (
-          filters.marca === 0 ||
-          dat.id_marca === filters.marca
-        )
-      )
-    })
-  }
-
-  const filteredProducts = data.length > 0 ? filterProducts(data) : []
+      const precio = Number(dat.precio);
+      const minPrice = Number(filters.minPrice);
+      console.log('Precio:', precio, 'MinPrice:', minPrice);
+      return (
+        precio >= minPrice &&
+        (filters.marca === 'all' || dat.marca.nombre === filters.marca)
+      );
+    });
+  };
+ 
+  const filteredProducts = data.length > 0 ? filterProducts(data) : [];
+  console.log('Filtered Products:', filteredProducts);
+  
 
   return (
     <>

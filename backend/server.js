@@ -23,7 +23,7 @@ app.get('/live', (req, res) => {
 
 app.get('/select', async (req, res) => {
 
-    const { error, data } = await supabaseClient.from("zapatillas").select("*")
+    const { error, data } = await supabaseClient.from("zapatillas").select('id, nombre, precio, imagen, marca(id, nombre), sexo(id, nombre)');
     if (error) {
       console.error(error);
     } else {
