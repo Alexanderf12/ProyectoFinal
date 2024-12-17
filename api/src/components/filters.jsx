@@ -1,12 +1,24 @@
-export function Filters( {onChange}){
+import {useFilters} from '../hooks/useFilters'
 
-    const handleChangeMinPrice = (event) => {
-        onChange(preveState => ({
-            ...preveState,
-            minPrice: event.target.value
-    
-        }))
-    }
+
+export function Filters(){
+  const {setFilters} = useFilters()
+
+  const handleChangeMinPrice = (event) => {
+    setFilters(preveState => ({
+      ...preveState,
+      minPrice: event.target.value
+
+    }))
+  }
+
+  const handleChangeCategory = (event) => {
+    setFilters(preveState => ({
+      ...preveState,
+      marca: event.target.value
+
+    }))
+  }
 
     return (
         <div className="space-y-4">
@@ -15,16 +27,20 @@ export function Filters( {onChange}){
           <h3 className="font-medium mb-2">Categoría</h3>
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
-              <input type="checkbox" value ='Nike'  id="category1"  />
+              <input type="checkbox" value ='Nike'  id="category1" onChange={handleChangeCategory}  />
               <label htmlFor="category1">Nike</label>
             </div>
             <div className="flex items-center space-x-2">
-              <input type="checkbox" id="category2" />
+              <input type="checkbox"  value ='Adidas' id="category2" onChange={handleChangeCategory} />
               <label htmlFor="category2">Adidas</label>
             </div>
             <div className="flex items-center space-x-2">
-              <input type="checkbox" id="category3" />
+              <input type="checkbox" value ='New Balance' id="category3" onChange={handleChangeCategory} />
               <label htmlFor="category3">New Balance</label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <input type="checkbox" value ='Puma' id="category4" onChange={handleChangeCategory} />
+              <label htmlFor="category4">Puma</label>
             </div>
           </div>
         </div>
