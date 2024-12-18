@@ -4,6 +4,7 @@ import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import {useFetchData} from './components/useFetchData'
 import { useFilters } from './hooks/useFilters';
+import { Cart } from './components/cart';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <main className="flex-grow container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row gap-8">
             <Sidebar/>
+            <Cart/>
             <div className="flex-grow">
               <Products data={filteredProducts}/>
               

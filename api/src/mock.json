@@ -1,0 +1,18 @@
+{
+    "products": [
+        {
+            "id": 22,
+            "nombre": " Puma Ignite ProKnit",
+            "precio": 122,
+            "imagen": "https://res.cloudinary.com/demgvmbmk/image/upload/v1690083392/imagenesProyecto/12-PUMA-Gengar_pic7xr.jpg",
+            "marca": {
+                "id": 4,
+                "nombre": "Puma"
+            },
+            "sexo": {
+                "id": 1,
+                "nombre": "Hombre"
+            }
+        }
+    ]
+}
