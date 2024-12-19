@@ -1,5 +1,5 @@
 .cart {
-    background: #000;
+    background: #ebebeb;
     display: none;
     padding: 32px;
     position: fixed;
@@ -9,13 +9,17 @@
   }
   
   .cart img {
-    aspect-ratio: 16/9;
+    
     width: 100%;
   }
   
   .cart li {
     border-bottom: 1px solid #444;
     padding-bottom: 16px;
+  }
+
+  .cart ul {
+    margin-top: 100px;
   }
   
   .cart footer {

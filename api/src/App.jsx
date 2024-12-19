@@ -5,6 +5,7 @@ import Sidebar from './components/sidebar';
 import {useFetchData} from './components/useFetchData'
 import { useFilters } from './hooks/useFilters';
 import { Cart } from './components/cart';
+import { CartProvider } from './context/cartContext';
 
 
 
@@ -20,7 +21,7 @@ function App() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <>
+    <CartProvider>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow container mx-auto px-4 py-8">
@@ -36,7 +37,7 @@ function App() {
         <Footer />
       </div>
 
-    </>
+    </CartProvider>
   );
 }
 

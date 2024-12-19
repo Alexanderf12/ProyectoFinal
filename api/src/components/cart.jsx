@@ -17,7 +17,7 @@ export function Cart () {
         <aside className="cart">
             <ul>
                 <li>
-                    <img src="" alt="" />
+                    <img src="https://res.cloudinary.com/demgvmbmk/image/upload/v1690083393/imagenesProyecto/38897382_2_f0hntr.jpg" alt="" />
 
                     <div>
                         <strong>Nike</strong> -$1999
