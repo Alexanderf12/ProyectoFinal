@@ -7,6 +7,7 @@ export function CartProvider( { children }) {
 
     const addToCart = product => {
         const productInCartIndex = cart.findIndex(item => item.id === product.id)
+        console.log(product)
 
         if (productInCartIndex >= 0){
             const newCart = structuredClone(cart)
@@ -22,6 +23,10 @@ export function CartProvider( { children }) {
             }
         ]))
     }
+
+    const removeFromCart = product => {
+        setCart(prevState => prevState.filter(item => item.id != product.id))
+    }
     const clearCart = () => {
         setCart([])
     }
@@ -30,6 +35,7 @@ export function CartProvider( { children }) {
         <CartContext.Provider value = {{
             cart,
             addToCart,
+            removeFromCart,
             clearCart
         }}
         >
