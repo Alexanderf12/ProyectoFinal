@@ -24,10 +24,11 @@ function App() {
     <CartProvider>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <Cart/>
         <main className="flex-grow container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row gap-8">
             <Sidebar/>
-            <Cart/>
+            
             <div className="flex-grow">
               <Products data={filteredProducts}/>
               

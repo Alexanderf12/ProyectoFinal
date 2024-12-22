@@ -1,4 +1,4 @@
-import {AddToCartIcon} from './icons.jsx'
+
 function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,12 +33,7 @@ function Header() {
               />
             </div>
 
-            <a href="/carrito" className="relative flex items-center">
-              <span className="h-6 w-6"> <AddToCartIcon /></span>
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-[10px] font-medium text-primary-foreground flex items-center justify-center">
-                0
-              </span>
-            </a>
+            
 
           </div>
 

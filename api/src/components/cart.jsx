@@ -33,29 +33,32 @@ export function Cart () {
     return (
         <>
 
-        <label htmlFor={cartCheckboxId} className="cart-button">
-            <CartIcon/>
-        </label>
-        <input id ={cartCheckboxId} type="checkbox" hidden />
+            <label htmlFor={cartCheckboxId} className="cart-button">
+                <CartIcon /> {cart.length}
+            </label>
+            <input id={cartCheckboxId} type="checkbox" hidden />
 
-        <aside className="cart">
-            <ul>
-                {cart.map(product => (
-                    
-                    <CartItem
-                     key={product.id}
-                     addToCart={()=> addToCart(product)}
-                     {...product}
-                    />
-                    
-                ))}
-                
-            </ul>
+            <aside className="cart">
+                <ul>
+                    {cart.map(product => (
 
-            <button onClick={clearCart}>
-                <ClearCartIcon/>
-            </button>
-        </aside>
+                        <CartItem
+                            key={product.id}
+                            addToCart={() => addToCart(product)}
+                            {...product}
+                        />
+
+                    ))}
+
+                </ul>
+
+                <button onClick={clearCart}>
+                    <ClearCartIcon />
+                </button>
+            </aside>
+
+
+
         </>
     )
 
