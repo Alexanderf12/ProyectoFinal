@@ -21,7 +21,7 @@ export function Products ({data}){
                 
                     return (
                         <div className="bg-white shadow-md rounded-lg overflow-hidden" key={product.id || product.nombre || index}>
-                            <img src={product.imagen} alt={product.nombre} width={200} height={500} className="w-full h-48 object-cover" />
+                            <img src={product.imagen} alt={product.nombre} width={100} height={400} className="w-full h-48 object-cover" />
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold">{product.nombre}</h3>
                                 <p className="text-gray-600">${product.precio}</p>
