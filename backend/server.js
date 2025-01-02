@@ -21,17 +21,27 @@ app.get('/live', (req, res) => {
 
 });
 
-app.get('/select', async (req, res) => {
+app.get('/select/resp', async (req, res) => {
+  const { resp } = req.query; // Captura el parámetro de consulta
+  const ascending = resp === 'true'; // Convertir a booleano
 
-    const { error, data } = await supabaseClient.from("zapatillas").select('id, nombre, precio, imagen, marca(id, nombre), sexo(id, nombre)');
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(data);
-    }
-    res.json(data);
-    console.log({ data })
-  })
+  if (resp !== 'true' && resp !== 'false') {
+    return res.status(400).json({ error: 'El valor de "resp" debe ser "true" o "false".' });
+  }
+
+  const { data, error } = await supabaseClient
+    .from('zapatillas')
+    .select('id, nombre, precio, imagen, marca(id, nombre), sexo(id, nombre)')
+    .order('precio', { ascending });
+
+  if (error) {
+    console.error('Error en la consulta:', error);
+    return res.status(500).json({ error: 'Error al realizar la consulta.' });
+  }
+
+  res.json(data);
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor Express escuchando en el puerto ${3000}`);
 });

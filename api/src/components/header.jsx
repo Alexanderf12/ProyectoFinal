@@ -1,14 +1,14 @@
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#014133] to-[#03714A] backdrop-blur supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-[#014133] supports-[backdrop-filter]:to-[#03714A]">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <a href="/" className="flex items-center space-x-2">
-            <span className="inline-block font-bold">LOGO</span>
+            <span className="inline-block font-bold text-white">LOGO</span>
           </a>
 
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-6 text-white">
             <a href="/" className="text-sm font-medium">
               Inicio
             </a>

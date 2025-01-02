@@ -1,12 +1,13 @@
 .cart {
-    background: #ebebeb;
+    background: #ffffff;
     display: none;
-    padding: 32px;
+    padding: 18px;
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 200px;
+    width: 165px;
     z-index: 1;
+    
   }
   
   .cart img {
@@ -21,7 +22,9 @@
 
   .cart ul {
     margin-top: 100px;
+    gap: 10px;
   }
+ 
   
   .cart footer {
     display: flex;
@@ -32,7 +35,11 @@
   
   .cart footer button {
     padding: 8px;
-   
+  }
+
+  .boxCart{
+    border: 1px solid gray;
+    padding: 10px;
   }
   
   .cart-button {

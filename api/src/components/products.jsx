@@ -35,10 +35,12 @@ export function Products ({data}){
                                     <div className="flex justify-center items-center gap-2">
                                        {
                                         isProductInCart
-                                        ? <RemoveFromCartIcon/>
+                                        ? <RemoveFromCartIcon/> 
                                         : <AddToCartIcon />
+                                        
                                        } 
-                                        Agregar al carrito
+                                       {isProductInCart ? 'Eliminar': 'Agregar'}
+                                        
                                     </div>
 
                                 </button>

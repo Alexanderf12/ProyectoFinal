@@ -2,8 +2,10 @@ import {useFilters} from '../hooks/useFilters'
 
 
 export function Filters(){
-  const {setFilters} = useFilters()
+  const {filters, setFilters} = useFilters()
+
   const handleChangeMinPrice = (event) => {
+
     setFilters(preveState => ({
       ...preveState,
       minPrice: event.target.value
@@ -27,8 +29,7 @@ export function Filters(){
     });
   };
     return (
-        <div className="space-y-4">
-         
+        <div className="space-y-4 bg-white">
         <div>
           <h3 className="font-medium mb-2">Categoría</h3>
           <div className="space-y-2">
@@ -45,23 +46,23 @@ export function Filters(){
             ))}
           </div>
         </div>
+        <br />
     
         
         <div>
           <h3 className="font-medium mb-2">Precio</h3>
           <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <input type="checkbox" value='50' id="price1" onChange={handleChangeMinPrice} />
-              <label htmlFor="price1">$0 - $50</label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input type="checkbox" value='100' id="price2" onChange={handleChangeMinPrice} />
-              <label htmlFor="price2">$50 - $100</label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <input type="checkbox" value= '200' id="price3" onChange={handleChangeMinPrice} />
-              <label htmlFor="price3">$100+</label>
-            </div>
+          <div> 
+              <label htmlFor=''>Precio a partir de:</label>
+              <input
+                type='range'
+                min='0'
+                max='300'
+                onChange={handleChangeMinPrice}
+                value={filters.minPrice}
+              />
+              <span>${filters.minPrice}</span>
+      </div>
           </div>
         </div>
       </div>

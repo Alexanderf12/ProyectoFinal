@@ -49,3 +49,14 @@ export function AddToCartIcon () {
       </svg>
     )
   }
+
+export function DeleteItem() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="gray">
+  <path d="M3 6h18v2H3V6zm2 3h14v11c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V9zm3 2v9h2v-9H8zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2zm-3-7c1.1 0 2 .9 2 2h6v2H4V6h6c0-1.1.9-2 2-2z"/>
+</svg>
+
+
+
+  )
+}

@@ -1,3 +1,4 @@
+
 import { createContext, useState } from "react";
 
 export const CartContext = createContext()
@@ -30,13 +31,15 @@ export function CartProvider( { children }) {
     const clearCart = () => {
         setCart([])
     }
+    
 
     return (
         <CartContext.Provider value = {{
             cart,
             addToCart,
             removeFromCart,
-            clearCart
+            clearCart,
+            
         }}
         >
             {children}
