@@ -13,7 +13,8 @@ supabaseClient = createClient(
 );
 
 app.use(cors({ origin: 'http://localhost:5173' }));
-app.use(express.json());
+app.use(cors());
+app.use(express.json()); 
 
 app.get('/live', (req, res) => {
 
@@ -40,6 +41,68 @@ app.get('/select/resp', async (req, res) => {
   }
 
   res.json(data);
+});
+app.post('/auth/register', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) throw error;
+
+    res.status(200).json({
+      message: 'Registro exitoso',
+      user: data.user
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+});
+
+// Ruta para login
+app.post('/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) throw error;
+
+    res.status(200).json({
+      message: 'Login exitoso',
+      session: data.session,
+      user: data.user
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+});
+
+// Ruta para logout
+app.post('/auth/logout', async (req, res) => {
+  try {
+    const { error } = await supabaseClient.auth.signOut();
+    
+    if (error) throw error;
+
+    res.status(200).json({
+      message: 'Logout exitoso'
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
 });
 
 app.listen(PORT, () => {

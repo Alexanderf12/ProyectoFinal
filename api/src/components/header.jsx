@@ -1,5 +1,10 @@
+import { Link } from 'react-router-dom'
+import { useAuth } from '../context/loginContext';
 
 function Header() {
+  const { isLogin, setIsLogin } = useAuth();
+  console.log(isLogin)
+ 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#014133] to-[#03714A] backdrop-blur supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-[#014133] supports-[backdrop-filter]:to-[#03714A]">
       <div className="container mx-auto px-4">
@@ -8,7 +13,7 @@ function Header() {
             <span className="inline-block font-bold text-white">LOGO</span>
           </a>
 
-          <nav className="hidden md:flex space-x-6 text-white">
+          <nav className="hidden md:flex space-x-12 text-white">
             <a href="/" className="text-sm font-medium">
               Inicio
             </a>
@@ -29,13 +34,17 @@ function Header() {
               <input
                 type="text"
                 placeholder="Buscar"
-                className="pl-8 w-[200px] border rounded-md p-2"
+                className="pl-8 w-[400px] border rounded-md p-2"
               />
             </div>
-
+            
             
 
           </div>
+          <div className="text-white">
+           <Link to="/login">{!isLogin ? "Iniciar Sesión" : "Cerrar Sesión" }</Link>
+          </div>
+
 
           
         </div>
